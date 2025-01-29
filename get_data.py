@@ -75,4 +75,7 @@ def get_country_data():
         print(f"Error fetching data: {e}")
         return pd.DataFrame()
     
-get_country_data()
+def transform_country_data():
+    country_data = get_country_data()
+    country_data['Independence'] = country_data['Independence'].astype(bool)
+    return country_data
